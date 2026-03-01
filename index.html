@@ -4,100 +4,75 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Atfos – Senior software consulting</title>
-  <meta name="description" content="Senior software consulting – kun tarvitset varmaa osaamista." />
 
   <style>
     :root {
-      --blue: #0b5ed7;
-      --dark: #0e2238;
-      --text: #1a1a1a;
-      --muted: #5f6368;
-      --bg: #f3f4f6;
-      --card: #ffffff;
-      --radius: 18px;
+      --blue: #1e63d5;
+      --dark: #102a43;
+      --muted: #5f6c7b;
+      --radius: 22px;
     }
 
     body {
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      color: var(--text);
-    
-      /* Full page background */
-      background: url("hero.png") center center / cover no-repeat fixed;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    /* HERO */
-
-    .hero {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-radius: var(--radius);
-      padding: 70px;
-      min-height: 420px;
-      align-items: center;
-      overflow: hidden;
-      background: #ffffff;
-    }
-    
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url('hero.png') right center / cover no-repeat;
-      z-index: 0;
-    }
-    
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to right,
-        #ffffff 0%,
-        #ffffff 45%,
-        rgba(255,255,255,0.85) 60%,
-        rgba(255,255,255,0) 75%
-      );
-      z-index: 1;
-    }
-    
-    .hero > div {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: 2.4rem;
+      background: #e9ecef;
       color: var(--dark);
     }
 
-    .hero h2 {
-      margin: 0 0 16px;
-      font-size: 1.8rem;
-      font-weight: 600;
+    .wrapper {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
 
-    .hero p {
-      max-width: 520px;
-      margin-bottom: 24px;
-      font-size: 1.1rem;
+    /* MAIN CARD WITH BACKGROUND IMAGE */
+
+    .page-card {
+      border-radius: var(--radius);
+      padding: 60px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+
+      background:
+        linear-gradient(
+          to right,
+          rgba(255,255,255,0.98) 0%,
+          rgba(255,255,255,0.98) 42%,
+          rgba(255,255,255,0.75) 58%,
+          rgba(255,255,255,0.20) 74%,
+          rgba(255,255,255,0.00) 84%
+        ),
+        url("hero.png");
+
+      background-size: cover;
+      background-position: right center;
+      background-repeat: no-repeat;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2.4rem;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+
+    p {
       color: var(--muted);
+      max-width: 520px;
+      line-height: 1.5;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 22px;
+      margin-top: 20px;
+      padding: 14px 24px;
+      border-radius: 12px;
       background: var(--blue);
       color: white;
-      border-radius: 12px;
       text-decoration: none;
       font-weight: 600;
       box-shadow: 0 6px 14px rgba(0,0,0,0.15);
@@ -105,78 +80,63 @@
     }
 
     .btn:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
 
-    /* CARDS */
+    /* TWO SMALL CARDS */
 
     .cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 40px;
+      gap: 28px;
+      margin-top: 60px;
     }
 
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 40px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    .small-card {
+      padding: 36px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
     }
 
-    .card h3 {
+    .small-card h3 {
       margin-top: 0;
-      font-size: 1.8rem;
-      color: var(--dark);
+      font-size: 1.6rem;
     }
 
-    .card ul {
+    .small-card ul {
       padding-left: 20px;
-      margin: 20px 0 30px;
+      margin-top: 20px;
       line-height: 1.6;
     }
 
-    .card li {
+    .small-card li {
       margin-bottom: 10px;
     }
 
-    .card.secondary {
-      position: relative;
-      border-radius: var(--radius);
-      padding: 40px;
-      overflow: hidden;
-      background: none;
-    }
-    
-    .card.secondary::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url('hero.jpg') center / cover no-repeat;
-      z-index: 0;
-    }
-    
-    .card.secondary::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(20, 160, 140, 0.35); /* greenish transparent layer */
+    /* ABOINNOVO GLASS STYLE */
+
+    .aboinnovo {
+      background:
+        linear-gradient(
+          rgba(120, 210, 190, 0.35),
+          rgba(120, 210, 190, 0.35)
+        ),
+        url("hero.png");
+      background-size: cover;
+      background-position: center;
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
-      z-index: 1;
     }
-    
-    .card.secondary > * {
-      position: relative;
-      z-index: 2;
+
+    .aboinnovo h3 span {
+      color: #148a66;
     }
-        
+
     /* FOOTER */
 
-    footer {
-      margin-top: 40px;
-      padding: 20px 0;
+    .footer {
+      margin-top: 60px;
       font-size: 0.95rem;
       color: var(--muted);
       display: flex;
@@ -185,23 +145,25 @@
       gap: 10px;
     }
 
-    footer a {
+    .footer strong {
       color: var(--dark);
-      text-decoration: none;
-      font-weight: 500;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    .footer a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
     }
 
     /* RESPONSIVE */
 
     @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        background: #ffffff;
-        padding: 40px 30px;
+      .page-card {
+        padding: 30px;
+        background:
+          linear-gradient(rgba(255,255,255,0.96), rgba(255,255,255,0.96)),
+          url("hero.png");
+        background-position: center;
       }
 
       .cards {
@@ -212,55 +174,68 @@
 </head>
 
 <body>
-  <div class="container">
 
-    <section class="hero">
-      <div>
-        <h1>Atfos</h1>
-        <h2>Senior software consulting, kun tarvitset varmaa osaamista</h2>
-        <p>
-          Kokeneet ohjelmistoasiantuntijat tueksi teknisiin päätöksiin
-          ja kehityksen vauhdittamiseen – selkeästi ja käytännönläheisesti.
-        </p>
-        <a class="btn" href="mailto:info@atfos.fi">Ota yhteyttä</a>
+  <div class="wrapper">
+
+    <div class="page-card">
+
+      <!-- TOP TEXT -->
+      <h1>Atfos</h1>
+      <h2>Senior software consulting, kun tarvitset varmaa osaamista</h2>
+      <p>
+        Kokeneet ohjelmistoasiantuntijat tueksi teknisiin päätöksiin ja
+        kehityksen vauhdittamiseen – selkeästi ja käytännönläheisesti.
+      </p>
+
+      <a class="btn" href="mailto:info@atfos.fi?subject=Yhteydenotto%20Atfos">
+        Ota yhteyttä
+      </a>
+
+      <!-- TWO SMALL CARDS -->
+      <div class="cards">
+
+        <div class="small-card">
+          <h3>Atfos</h3>
+          <ul>
+            <li>Senior-konsultit</li>
+            <li>Tekninen sparraus (arkkitehtuuri & päätöksenteko)</li>
+            <li>Katselmoinnit ja nykytilan arviointi</li>
+          </ul>
+
+          <a class="btn" href="mailto:info@atfos.fi?subject=Yhteydenotto%20Atfos">
+            Ota yhteyttä
+          </a>
+        </div>
+
+        <div class="small-card aboinnovo">
+          <h3><span>AboInnovo</span> – Design Management</h3>
+          <ul>
+            <li>Organisaation suunnan kirkastaminen ja perustan rakentaminen</li>
+            <li>Toimintamallien ja prosessien sujuvoittaminen</li>
+            <li>Tulevaisuuskestävyyden ja operatiivisen selkeyden vahvistaminen</li>
+          </ul>
+
+          <a class="btn" href="mailto:aboinnovo@atfos.fi?subject=Yhteydenotto%20AboInnovo">
+            Ota yhteyttä
+          </a>
+        </div>
+
       </div>
-    </section>
 
-    <section class="cards">
-
-      <div class="card">
-        <h3>Atfos</h3>
-        <ul>
-          <li>Senior-konsultit</li>
-          <li>Tekninen sparraus (arkkitehtuuri & päätöksenteko)</li>
-          <li>Katselmoinnit ja nykytilan arviointi</li>
-        </ul>
-        <a class="btn" href="mailto:info@atfos.fi">Ota yhteyttä</a>
+      <!-- FOOTER -->
+      <div class="footer">
+        <div>
+          <strong>Atfos</strong> · Senior software consulting ·
+          info@atfos.fi · 0400502421 · Turku, Suomi
+        </div>
+        <div>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
       </div>
 
-      <div class="card secondary">
-        <h3>AboInnovo – Design Management</h3>
-        <ul>
-          <li>Organisaation suunnan kirkastaminen ja perustan rakentaminen</li>
-          <li>Toimintamallien ja prosessien sujuvoittaminen</li>
-          <li>Tulevaisuuskestävyyden ja operatiivisen selkeyden vahvistaminen</li>
-        </ul>
-        <a class="btn" href="mailto:aboinnovo@atfos.fi">Ota yhteyttä</a>
-      </div>
-
-    </section>
-
-    <footer>
-      <div>
-        <strong>Atfos</strong> · Senior software consulting ·
-        <a href="mailto:info@atfos.fi">info@atfos.fi</a> ·
-        0400502421 · Turku, Suomi
-      </div>
-      <div>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-      </div>
-    </footer>
+    </div>
 
   </div>
+
 </body>
 </html>
