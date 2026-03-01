@@ -27,6 +27,11 @@
     }
 
     /* MAIN CARD WITH BACKGROUND IMAGE */
+    .brand img {
+      height: 54px;           /* tweak to taste */
+      width: auto;
+      display: block;
+    }
 
     .page-card {
       border-radius: var(--radius);
@@ -117,18 +122,11 @@
     /* ABOINNOVO GLASS STYLE */
 
     .aboinnovo {
-      background:
-        linear-gradient(
-          rgba(120, 210, 190, 0.35),
-          rgba(120, 210, 190, 0.35)
-        ),
-        url("hero.png");
-      background-size: cover;
-      background-position: center;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
-
+    
     .aboinnovo h3 span {
       color: #148a66;
     }
@@ -155,6 +153,42 @@
       font-weight: 500;
     }
 
+    .linkedin-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(0,0,0,0.06);
+
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.linkedin-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+
+  background: #0a2c4a;   /* dark square like your mock */
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1;
+  font-family: Arial, sans-serif;
+}
+
+.linkedin-chip:hover {
+  opacity: 0.9;
+}
+
     /* RESPONSIVE */
 
     @media (max-width: 900px) {
@@ -180,8 +214,9 @@
     <div class="page-card">
 
       <!-- TOP TEXT -->
-      <h1>Atfos</h1>
-      <h2>Senior software consulting, kun tarvitset varmaa osaamista</h2>
+      <div class="brand">
+        <img src="loco_netti.png" alt="Atfos" />
+      </div>      <h2>Senior software consulting, kun tarvitset varmaa osaamista</h2>
       <p>
         Kokeneet ohjelmistoasiantuntijat tueksi teknisiin päätöksiin ja
         kehityksen vauhdittamiseen – selkeästi ja käytännönläheisesti.
@@ -229,18 +264,15 @@
           info@atfos.fi · 0400502421 · Turku, Suomi
         </div>
         <div>
-        <a 
-          class="linkedin-link"
-          href="https://www.linkedin.com/company/106594725"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="linkedin-icon">in</span>
-          <span>LinkedIn</span>
-        </a>
-        </div>
-      </div>
-
+      <a
+        class="linkedin-chip"
+        href="https://www.linkedin.com/company/106594725"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="linkedin-icon" aria-hidden="true">in</span>
+        <span>LinkedIn</span>
+      </a>
     </div>
 
   </div>
