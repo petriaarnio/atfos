@@ -94,7 +94,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px;
-      margin-top: 60px;
+      margin-top: 40px;
     }
 
     .small-card {
@@ -102,8 +102,11 @@
       border-radius: 18px;
       background: rgba(255,255,255,0.92);
       box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    
+      display: flex;
+      flex-direction: column;
     }
-
+    
     .small-card h3 {
       margin-top: 0;
       font-size: 1.6rem;
@@ -117,6 +120,11 @@
 
     .small-card li {
       margin-bottom: 10px;
+    }
+
+    .small-card .btn {
+      margin-top: auto;   /* pushes button to bottom */
+      align-self: flex-start;  /* keeps it left-aligned */
     }
 
     /* ABOINNOVO GLASS STYLE */
@@ -215,16 +223,12 @@
 
       <!-- TOP TEXT -->
       <div class="brand">
-        <img src="loco_netti.png" alt="Atfos" />
+        <img src="logo_netti.png" alt="Atfos" />
       </div>      <h2>Senior software consulting, kun tarvitset varmaa osaamista</h2>
       <p>
         Kokeneet ohjelmistoasiantuntijat tueksi teknisiin päätöksiin ja
         kehityksen vauhdittamiseen – selkeästi ja käytännönläheisesti.
       </p>
-
-      <a class="btn" href="mailto:info@atfos.fi?subject=Yhteydenotto%20Atfos">
-        Ota yhteyttä
-      </a>
 
       <!-- TWO SMALL CARDS -->
       <div class="cards">
